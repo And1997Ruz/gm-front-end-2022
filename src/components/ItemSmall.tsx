@@ -51,7 +51,7 @@ const ItemSmall: React.FC<Props> = ({
           src={imgSrc}
           alt=""
           className="item_small_picture"
-          onLoadStart={() => {
+          onLoad={() => {
             setImageLoading(false);
           }}
         />
