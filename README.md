@@ -1,46 +1,36 @@
-# Getting Started with Create React App
+General Market - это Full-Stack Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+В процессе разработки использовались следующие технологии:
+HTML/CSS, TypeScript, React, Redux, NodeJs, Express, MongoDB, JWT
 
-## Available Scripts
+Поддерживаемый функционал:
+  * Регистрация и аутентификация пользователей проводится с помощью JWT токенов.
+  * Пароли пользователей в базе данных хранятся в исключительно зашифрованном виде, подобным образом:" $2b$10$H2OZFyHhf7keCUYixYwiIewbeD/ewJpV4FxqRMhtKMf3JTUQT3Wue"
+  * Для каждого предложения возможно загрузить до 3-х фотографий
+  * Имеется фильтрация предложений по категsориям, а также с помощью поисковой строки
+  * Большой массив данных разделяется на отдельные страницы для удобства пользователей
+  * Во время извлечения данных отображается индикатор загрузки
+  * Пользователи имеют возможность редактировать и удалять свои предложения, а также свою страницу профайла
+  * Дизайн адаптируется под используемое устройство (компьютер, планшет, смартфон)
 
-In the project directory, you can run:
 
-### `npm start`
+Инструкция по установке:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Backend:
+1. В новой папке клонируем репозиторий git clone https://github.com/And1997Ruz/gm-backend-2022.git
+2. В корневой папке создаём .env файл следующего содержания:
+    PORT=5000
+    DATABASE_URL=mongodb://localhost:27017/mydb
+    JWT_PRIVATE_KEY=jwtsecretprivateunavailablekey
+3. Далее скачиваем пакеты с помощью npm командой npm install
+4. Для запуска приложения на локальном хосте, запускаем команду npm run dev
+5. Заранее не предпологалось, что приложение будет запускаться с нуля, поэтому оно не оптимизировано для запуска с пустой базой данных.
+    Нужно будет в ручную загрузить categories.json файл в базу данных MongoDB, т.к. отсутствует UI инструмент для этого.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Frontend:
+1. В новой папке клонируем репозиторий git clone https://github.com/And1997Ruz/gm-front-end-2022.git
+2. В корневой папке создаём .env файл следующего содержания:
+    REACT_APP_BASE_SERVER_URL=http://localhost:5000
+3. Далее скачиваем пакеты с помощью npm командой npm install
+4. Для запуска приложения на локальном хосте, запускаем команду npm run start
