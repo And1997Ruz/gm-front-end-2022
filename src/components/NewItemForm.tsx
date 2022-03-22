@@ -103,6 +103,7 @@ const NewItemForm: React.FC = () => {
           ...data,
           categoryId: selectFormValue,
           userId: currentUser,
+          dateOfPost: new Date().toLocaleDateString("ru-RU"),
         }),
         {
           headers: {
