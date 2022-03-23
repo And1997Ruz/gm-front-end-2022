@@ -207,6 +207,7 @@ body {
 .logo_small {
   width: 100px;
   cursor: pointer;
+  height: 50px;
   margin-top: 10px;
   box-shadow: 0 0 10px 10px rgb(245, 245, 245);
 }
@@ -264,11 +265,13 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   box-shadow: 0 0 15px 5px rgb(238, 238, 238);
   border-radius: 10px;
   background-color: rgb(252, 252, 252);
   transition: 0.3s;
+  height: 150px;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 1400px) {
@@ -415,17 +418,31 @@ body {
 
 .item_small:hover {
   cursor: pointer;
-  border-radius: 20px;
   box-shadow: 0 0 5px 5px rgb(207, 207, 207);
+}
+
+.image_skeleton {
+  animation: skeleton 0.5s linear infinite alternate;
+}
+
+@keyframes skeleton {
+  0% {
+    background-color: rgb(228, 228, 228);
+  }
+
+  100% {
+    background-color: rgb(167, 167, 167);
+  }
 }
 
 .item_small_picture {
   width: 100px;
+  height: 100px;
   max-height: 80%;
   border-radius: 10%;
   object-fit: cover;
   margin: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .item_small_picture_container {
@@ -470,13 +487,17 @@ body {
 
 .item_small_info {
   max-width: 270px;
+  padding: 10px;
+  padding-left: 0;
+  text-overflow: ellipsis;
   overflow: hidden;
 }
 
 .item_small_info_name {
-  font-size: 1.3rem;
-  margin-bottom: 0;
-  color: rgb(34, 34, 34);
+  font-size: 1.1rem;
+  margin: 0;
+  white-space: nowrap;
+  color: rgb(70, 70, 70);
 }
 
 @media screen and (max-width: 500px) {
@@ -498,12 +519,11 @@ body {
 }
 
 .item_small_info_price {
-  font-size: 1.2rem;
-  font-family: "Courier New", Courier, monospace;
-  font-weight: 900;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  color: rgb(59, 59, 59);
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+  margin-top: 5px;
+  color: rgb(0, 0, 0);
 }
 
 .item_small_info_description {
@@ -872,15 +892,16 @@ body {
 }
 
 .category_header {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
   margin: 10px 20px;
   margin-right: 10px;
   color: white;
   display: inline-block;
   padding: 3px 10px;
-  width: 220px;
+  width: 200px;
   text-align: center;
-  border-radius: 20px;
+  border-radius: 15px;
   background-color: rgb(150, 150, 150);
   box-shadow: 0 0 1px 1px rgb(116, 116, 116);
   transition: 0.5s;

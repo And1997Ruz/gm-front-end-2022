@@ -49,8 +49,8 @@ const NavBar: React.FC = () => {
         <div className="nav_bar_group1">
           <img
             src="/logo_small.jpg"
-            alt="logo"
-            className="logo_small"
+            alt=""
+            className="logo_small image_skeleton"
             onClick={() => {
               navigate("/");
               dispatch(setSearchQuery(""));
@@ -108,8 +108,8 @@ const NavBar: React.FC = () => {
                   {currentUser && (
                     <img
                       src={userPicture}
-                      alt="userProfileIMG"
-                      className="nav_bar_profile_img"
+                      alt=""
+                      className="nav_bar_profile_img image_skeleton"
                     />
                   )}
                   <div className="nav_bar_profile_name">{currentUser.name}</div>

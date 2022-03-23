@@ -59,7 +59,7 @@ const SearchBar: React.FC = () => {
         className="search_bar_container"
         onSubmit={(e) => e.preventDefault()}
       >
-        <img src="search_icon.svg" alt="search_icon" className="search_icon" />
+        <img src="search_icon.svg" alt="" className="search_icon" />
         <input
           type="text"
           id="search_input"
@@ -71,7 +71,7 @@ const SearchBar: React.FC = () => {
         {searchQuery && (
           <img
             src="cross.svg"
-            alt="search_icon"
+            alt=""
             className="cross_icon"
             onClick={handleSearchReset}
           />

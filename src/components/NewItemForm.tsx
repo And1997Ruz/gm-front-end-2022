@@ -258,7 +258,7 @@ const NewItemForm: React.FC = () => {
                 <img
                   className="custom_file_input_small_icon"
                   src="/add_photo_icon.svg"
-                  alt="add_photo"
+                  alt=""
                 />
                 Выбрать файлы
               </div>
@@ -277,7 +277,7 @@ const NewItemForm: React.FC = () => {
                 ))}
                 <img
                   src="cross.svg"
-                  alt="search_icon"
+                  alt=""
                   className="cross_icon_img"
                   onClick={(e) => handleFileReset(e)}
                 />

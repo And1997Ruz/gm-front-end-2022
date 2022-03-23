@@ -193,7 +193,7 @@ const ItemPage = () => {
                         <img
                           className="delete_icon"
                           src="/trash_can_icon.svg"
-                          alt="delete icon"
+                          alt=""
                           draggable={false}
                           onClick={() => {
                             setPopupActive(true);
@@ -204,7 +204,7 @@ const ItemPage = () => {
                         <img
                           className="edit_icon"
                           src="/gear_icon.svg"
-                          alt="edit icon"
+                          alt=""
                           draggable={false}
                           onClick={() => navigate(`/item/edit/${params.id}`)}
                         />
@@ -225,12 +225,12 @@ const ItemPage = () => {
                                   ? `${baseUrl}${path}`
                                   : "/defaultPicture.png"
                               }
-                              alt="item_photo"
-                              className={`item_page_picture_small
+                              alt=""
+                              className={`item_page_picture_small image_skeleton
                       ${
                         selectedPicture === baseUrl + path
-                          ? "item_page_picture_small_active"
-                          : "item_page_picture_small_inactive"
+                          ? "item_page_picture_small_active image_skeleton"
+                          : "item_page_picture_small_inactive image_skeleton"
                       }`}
                               onClick={() => setSelectedPicture(baseUrl + path)}
                             />
@@ -239,7 +239,7 @@ const ItemPage = () => {
                                 <img
                                   className="delete_photo_icon"
                                   src="/delete_photo_icon.svg"
-                                  alt="delete photoicon"
+                                  alt=""
                                   draggable={false}
                                   onClick={() => {
                                     setPopupActive(true);
@@ -261,7 +261,7 @@ const ItemPage = () => {
                               >
                                 <img
                                   src="/add_photo_icon.svg"
-                                  alt="add_photo_icon"
+                                  alt=""
                                   className="add_photo_icon"
                                 />
                               </div>
@@ -286,7 +286,7 @@ const ItemPage = () => {
                             <img
                               className="cross_icon cross_icon_red"
                               src="/cross_red.svg"
-                              alt="cross"
+                              alt=""
                               onClick={() => {
                                 setSelectedFilesFormatError(false);
                                 setSelectedFile(undefined);
@@ -301,7 +301,7 @@ const ItemPage = () => {
                     <div className="item_page_picture_big">
                       <img
                         src={selectedPicture}
-                        alt="item_photo"
+                        alt=""
                         className="item_page_picture_big"
                       />
                     </div>
@@ -345,24 +345,24 @@ const ItemPage = () => {
                             ? `${baseUrl}${seller.userPicture}`
                             : "/defaultPicture.png"
                         }
-                        alt="userProfileIMG"
-                        className="nav_bar_profile_img"
+                        alt=""
+                        className="nav_bar_profile_img image_skeleton"
                       />
                       <div className="nav_bar_profile_name">{seller.name}</div>
                     </div>
                     <div className="seller_card">
                       <img
                         src="/phone_icon.jpg"
-                        alt="phone_icon"
-                        className="nav_bar_profile_img"
+                        alt=""
+                        className="nav_bar_profile_img image_skeleton"
                       />
                       <div className="nav_bar_profile_name">{seller.phone}</div>
                     </div>
                     <div className="seller_card">
                       <img
                         src="/email_icon.png"
-                        alt="email_icon"
-                        className="nav_bar_profile_img"
+                        alt=""
+                        className="nav_bar_profile_img image_skeleton"
                       />
                       <div className="nav_bar_profile_name">{seller.email}</div>
                     </div>

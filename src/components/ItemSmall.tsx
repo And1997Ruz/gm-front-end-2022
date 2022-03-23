@@ -18,7 +18,6 @@ const ItemSmall: React.FC<Props> = ({
   itemId,
 }) => {
   const [isMobile, setIsMobile] = useState(false);
-  const [imageLoading, setImageLoading] = useState(true);
   const [currentPreviewIdx, setCurrentPreviewIdx] = useState<number>(0);
   const baseUrl = process.env.REACT_APP_BASE_SERVER_URL;
 
@@ -46,14 +45,10 @@ const ItemSmall: React.FC<Props> = ({
   return (
     <div className="item_small" onClick={handleNavigate}>
       <div className="item_small_picture_container">
-        {imageLoading && <ImageSkeleton />}
         <img
           src={imgSrc}
           alt=""
-          className="item_small_picture"
-          onLoad={() => {
-            setImageLoading(false);
-          }}
+          className="item_small_picture image_skeleton"
         />
         {pictures && pictures.length > 1 && !isMobile && (
           <div className="pictureSelect_wrapper">

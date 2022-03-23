@@ -188,7 +188,7 @@ const ProfilePage = () => {
                       <img
                         className="delete_photo_icon_profile"
                         src="/delete_photo_icon.svg"
-                        alt="delete photoicon"
+                        alt=""
                         draggable={false}
                         onClick={() => {
                           setPopupActive(true);
@@ -212,7 +212,7 @@ const ProfilePage = () => {
                     >
                       <img
                         src="/add_photo_icon.svg"
-                        alt="add_photo_icon"
+                        alt=""
                         className="add_photo_icon_profile"
                       />
                       <input
@@ -233,7 +233,7 @@ const ProfilePage = () => {
                         <img
                           className="cross_icon cross_icon_red"
                           src="/cross_red.svg"
-                          alt="cross"
+                          alt=""
                           onClick={() => {
                             setSelectedFilesFormatError(false);
                             setSelectedFile(undefined);
@@ -256,7 +256,7 @@ const ProfilePage = () => {
                       <img
                         className="delete_photo_icon_profile"
                         src="/delete_photo_icon.svg"
-                        alt="delete photoicon"
+                        alt=""
                         draggable={false}
                         onClick={() => {
                           setPopupActive(true);
@@ -269,7 +269,7 @@ const ProfilePage = () => {
                     <img
                       className="delete_icon"
                       src="/trash_can_icon.svg"
-                      alt="delete icon"
+                      alt=""
                       draggable={false}
                       onClick={() => {
                         setPopupActive(true);
@@ -280,7 +280,7 @@ const ProfilePage = () => {
                     <img
                       className="edit_icon"
                       src="/gear_icon.svg"
-                      alt="edit icon"
+                      alt=" "
                       draggable={false}
                       onClick={() => navigate("/profile/edit")}
                     />
@@ -296,8 +296,8 @@ const ProfilePage = () => {
                               ? `${baseUrl}${currentUser.userPicture}`
                               : "/defaultPicture.png"
                           }
-                          alt="userProfileIMG"
-                          className="nav_bar_profile_img"
+                          alt=""
+                          className="nav_bar_profile_img image_skeleton"
                         />
                         <div className="nav_bar_profile_name">
                           {currentUser.name}
@@ -306,8 +306,8 @@ const ProfilePage = () => {
                       <div className="seller_card">
                         <img
                           src="/phone_icon.jpg"
-                          alt="phone_icon"
-                          className="nav_bar_profile_img"
+                          alt=""
+                          className="nav_bar_profile_img image_skeleton"
                         />
                         <div className="nav_bar_profile_name">
                           {currentUser.phone}
@@ -316,8 +316,8 @@ const ProfilePage = () => {
                       <div className="seller_card">
                         <img
                           src="/email_icon.png"
-                          alt="email_icon"
-                          className="nav_bar_profile_img"
+                          alt=""
+                          className="nav_bar_profile_img image_skeleton"
                         />
                         <div className="nav_bar_profile_name">
                           {currentUser.email}
