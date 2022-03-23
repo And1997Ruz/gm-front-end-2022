@@ -50,7 +50,7 @@ const NavBar: React.FC = () => {
           <img
             src="/logo_small.jpg"
             alt=""
-            className="logo_small image_skeleton"
+            className="logo_small"
             onClick={() => {
               navigate("/");
               dispatch(setSearchQuery(""));
