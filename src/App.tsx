@@ -57,7 +57,7 @@ function App() {
 
   return (
     <div className="App">
-      {isLoading ? (
+      {/* {isLoading ? (
         <div className="loading_wrapper">
           <PulseLoader
             speedMultiplier={0.5}
@@ -66,27 +66,27 @@ function App() {
             margin={10}
           />
         </div>
-      ) : (
-        <div className="main">
-          <Router>
-            <ScrollToTop />
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/new-item" element={<NewItemForm />} />
-              <Route path="/item/:id" element={<ItemPage />} />
-              <Route path="/item/edit/:id" element={<EditItemForm />} />
-              <Route path="/profile" element={<ProfilePage />} />
-              <Route path="/profile/edit" element={<EditUserForm />} />
-              <Route path="/aboutDev" element={<AboutDev />} />
-              <Route path="" element={<Footer />} />
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-          </Router>
-          <Footer />
-        </div>
-      )}
+      ) : ( */}
+      <div className="main">
+        <Router>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/new-item" element={<NewItemForm />} />
+            <Route path="/item/:id" element={<ItemPage />} />
+            <Route path="/item/edit/:id" element={<EditItemForm />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/profile/edit" element={<EditUserForm />} />
+            <Route path="/aboutDev" element={<AboutDev />} />
+            <Route path="" element={<Footer />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </Router>
+        <Footer />
+      </div>
+      {/* )} */}
     </div>
   );
 }

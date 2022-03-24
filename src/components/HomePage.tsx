@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import NavBar from "./NavBar";
 import ItemSmallContainer from "./ItemSmallContainer";
+import HomeSkeleton from "./skeletons/HomeSkeleton";
 import SearchBar from "./SearchBar";
 import Categories from "./Categories";
 import NothingFound from "./NothingFound";
@@ -35,6 +36,7 @@ export default function HomePage() {
     <div className="home_page">
       <NavBar />
       <SearchBar />
+      {items.length === 0 && <HomeSkeleton />}
       {filterItems(items, searchQuery).length === 0 ? (
         <NothingFound hidden={searchQuery ? false : true} />
       ) : (

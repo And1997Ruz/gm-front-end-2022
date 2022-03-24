@@ -249,6 +249,13 @@ body {
 
 /* Item small */
 
+.item_small_text_skeleton {
+  height: 10px;
+  border-radius: 20px;
+  background-color: grey;
+  animation: skeleton 0.5s linear infinite alternate;
+}
+
 .grid_wrapper {
   display: flex;
   align-items: center;
@@ -858,6 +865,12 @@ body {
 }
 
 /* Categories */
+
+.category_row_skeleton {
+  height: 80px;
+  background-color: grey;
+  animation: skeleton 0.5s linear infinite alternate;
+}
 
 .category_icon_row_wrapper {
   display: flex;

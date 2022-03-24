@@ -72,7 +72,7 @@ const Categories: React.FC<Props> = ({ hidden, setCurrentPage }) => {
                 id={category.name}
                 src={`${baseUrl}${category.iconPath}`}
                 alt=""
-                className="category_icon image_skeleton tooltip"
+                className="category_icon image_skeleton"
                 onClick={() => handleCategorySelect(category)}
                 draggable={false}
               />
