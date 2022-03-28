@@ -2044,3 +2044,34 @@ body {
     display: none;
   }
 }
+
+.tooltip {
+  animation: appearTooltip 0.3s;
+  transform-origin: bottom center;
+  text-align: center;
+}
+
+@keyframes appearTooltip {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.tooltip::after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid grey;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}

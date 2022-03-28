@@ -6,6 +6,7 @@ import { addFilter, removeFilter } from "../store/reducers/filteredItems";
 import { setSearchQuery } from "../store/reducers/searchQuery";
 import SearchAutocomplete from "./SearchAutocomplete";
 import { Item } from "../types";
+import Tooltip from "./Tooltip";
 
 const SearchBar: React.FC = () => {
   const items = useSelector((state: RootState) => state.items);
@@ -69,12 +70,14 @@ const SearchBar: React.FC = () => {
           onChange={handleChange}
         />
         {searchQuery && (
-          <img
-            src="cross.svg"
-            alt=""
-            className="cross_icon"
-            onClick={handleSearchReset}
-          />
+          <Tooltip text="Сбросить поиск">
+            <img
+              src="cross.svg"
+              alt=""
+              className="cross_icon"
+              onClick={handleSearchReset}
+            />
+          </Tooltip>
         )}
         <button
           type="submit"

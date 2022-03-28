@@ -1,5 +1,5 @@
 import React from "react";
-import CategoriesSkeleton from "../CategoriesSkeleton";
+import CategoriesSkeleton from "./CategoriesSkeleton";
 import ItemsSmallContainerSkeleton from "./ItemsSmallContainerSkeleton";
 
 const HomeSkeleton: React.FC = () => {

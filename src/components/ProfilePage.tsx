@@ -11,6 +11,7 @@ import Popup from "./Popup";
 import axios from "axios";
 import { loadItems } from "../store/reducers/itemsSlice";
 import PulseLoader from "react-spinners/PulseLoader";
+import Tooltip from "./Tooltip";
 
 const ProfilePage = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -185,18 +186,20 @@ const ProfilePage = () => {
                 {currentUser?.userPicture ? (
                   <div className="profile_page_picture_container_within">
                     {!isMobile && (
-                      <img
-                        className="delete_photo_icon_profile"
-                        src="/delete_photo_icon.svg"
-                        alt=""
-                        draggable={false}
-                        onClick={() => {
-                          setPopupActive(true);
-                          setDeletedPhotoId(currentUser.userPicture);
-                          setPopupAction("deletePhoto");
-                          handleDeletePhoto();
-                        }}
-                      />
+                      <Tooltip width={150} text="Удалить фотографию">
+                        <img
+                          className="delete_photo_icon_profile"
+                          src="/delete_photo_icon.svg"
+                          alt=""
+                          draggable={false}
+                          onClick={() => {
+                            setPopupActive(true);
+                            setDeletedPhotoId(currentUser.userPicture);
+                            setPopupAction("deletePhoto");
+                            handleDeletePhoto();
+                          }}
+                        />
+                      </Tooltip>
                     )}
                     <img
                       src={`${baseUrl}${currentUser.userPicture}`}
@@ -266,24 +269,27 @@ const ProfilePage = () => {
                         }}
                       />
                     )}
-                    <img
-                      className="delete_icon"
-                      src="/trash_can_icon.svg"
-                      alt=""
-                      draggable={false}
-                      onClick={() => {
-                        setPopupActive(true);
-                        setPopupAction("deleteItem");
-                      }}
-                    />
-
-                    <img
-                      className="edit_icon"
-                      src="/gear_icon.svg"
-                      alt=" "
-                      draggable={false}
-                      onClick={() => navigate("/profile/edit")}
-                    />
+                    <Tooltip text="Удалить страницу">
+                      <img
+                        className="delete_icon"
+                        src="/trash_can_icon.svg"
+                        alt=""
+                        draggable={false}
+                        onClick={() => {
+                          setPopupActive(true);
+                          setPopupAction("deleteItem");
+                        }}
+                      />
+                    </Tooltip>
+                    <Tooltip width={150} text="Редактировать страницу">
+                      <img
+                        className="edit_icon"
+                        src="/gear_icon.svg"
+                        alt=" "
+                        draggable={false}
+                        onClick={() => navigate("/profile/edit")}
+                      />
+                    </Tooltip>
                   </div>
                 </div>
                 <div className="user_info_main_container">

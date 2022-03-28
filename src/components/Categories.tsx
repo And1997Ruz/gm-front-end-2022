@@ -5,6 +5,7 @@ import { RootState } from "../store";
 import { setCurrentCategory } from "../store/reducers/currentCategory";
 import { addFilter, removeFilter } from "../store/reducers/filteredItems";
 import { Category, Item } from "../types";
+import Tooltip from "./Tooltip";
 
 interface Props {
   hidden: boolean;
@@ -51,12 +52,14 @@ const Categories: React.FC<Props> = ({ hidden, setCurrentPage }) => {
         {currentCategory ? currentCategory : "Фильтр по категориям"}
       </h2>
       {currentCategory && (
-        <img
-          src="cross.svg"
-          alt=""
-          className="cross_icon"
-          onClick={handleCategoryReset}
-        />
+        <Tooltip text="Сбросить фильтр">
+          <img
+            src="cross.svg"
+            alt=""
+            className="cross_icon"
+            onClick={handleCategoryReset}
+          />
+        </Tooltip>
       )}
       <div className="category_icon_row_wrapper">
         <div className="category_icon_row">
@@ -67,15 +70,17 @@ const Categories: React.FC<Props> = ({ hidden, setCurrentPage }) => {
             breakPoints={breakPoints}
           >
             {categories.map((category: Category) => (
-              <img
-                key={category.name}
-                id={category.name}
-                src={`${baseUrl}${category.iconPath}`}
-                alt=""
-                className="category_icon image_skeleton"
-                onClick={() => handleCategorySelect(category)}
-                draggable={false}
-              />
+              <Tooltip width={150} key={category.name} text={category.name}>
+                <img
+                  key={category.name}
+                  id={category.name}
+                  src={`${baseUrl}${category.iconPath}`}
+                  alt=""
+                  className="category_icon image_skeleton"
+                  onClick={() => handleCategorySelect(category)}
+                  draggable={false}
+                />
+              </Tooltip>
             ))}
           </Carousel>
         </div>

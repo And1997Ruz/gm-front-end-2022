@@ -9,6 +9,7 @@ import NavBar from "./NavBar";
 import ItemSmallContainer from "./ItemSmallContainer";
 import Popup from "./Popup";
 import PulseLoader from "react-spinners/PulseLoader";
+import Tooltip from "./Tooltip";
 
 const ItemPage = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -190,24 +191,27 @@ const ItemPage = () => {
                     <h1 className="item_page_header">{item.name}</h1>
                     {currentUser === seller?._id && (
                       <div className="edit_container">
-                        <img
-                          className="delete_icon"
-                          src="/trash_can_icon.svg"
-                          alt=""
-                          draggable={false}
-                          onClick={() => {
-                            setPopupActive(true);
-                            setPopupAction("deleteItem");
-                          }}
-                        />
-
-                        <img
-                          className="edit_icon"
-                          src="/gear_icon.svg"
-                          alt=""
-                          draggable={false}
-                          onClick={() => navigate(`/item/edit/${params.id}`)}
-                        />
+                        <Tooltip text="Удалить страницу">
+                          <img
+                            className="delete_icon"
+                            src="/trash_can_icon.svg"
+                            alt=""
+                            draggable={false}
+                            onClick={() => {
+                              setPopupActive(true);
+                              setPopupAction("deleteItem");
+                            }}
+                          />
+                        </Tooltip>
+                        <Tooltip width={150} text="Редактировать страницу">
+                          <img
+                            className="edit_icon"
+                            src="/gear_icon.svg"
+                            alt=""
+                            draggable={false}
+                            onClick={() => navigate(`/item/edit/${params.id}`)}
+                          />
+                        </Tooltip>
                       </div>
                     )}
                   </div>
@@ -236,18 +240,20 @@ const ItemPage = () => {
                             />
                             {item.seller._id === currentUser && (
                               <>
-                                <img
-                                  className="delete_photo_icon"
-                                  src="/delete_photo_icon.svg"
-                                  alt=""
-                                  draggable={false}
-                                  onClick={() => {
-                                    setPopupActive(true);
-                                    setDeletedPhotoId(path);
-                                    setPopupAction("deletePhoto");
-                                    handleDeletePhoto();
-                                  }}
-                                />
+                                <Tooltip width={150} text="Удалить фотографию">
+                                  <img
+                                    className="delete_photo_icon"
+                                    src="/delete_photo_icon.svg"
+                                    alt=""
+                                    draggable={false}
+                                    onClick={() => {
+                                      setPopupActive(true);
+                                      setDeletedPhotoId(path);
+                                      setPopupAction("deletePhoto");
+                                      handleDeletePhoto();
+                                    }}
+                                  />
+                                </Tooltip>
                               </>
                             )}
                           </div>

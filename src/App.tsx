@@ -1,11 +1,10 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import "./App.css";
 import "./index.css";
 import axios from "axios";
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import jwtDecode from "jwt-decode";
 import { useDispatch } from "react-redux";
-import PulseLoader from "react-spinners/PulseLoader";
 
 import { loadCategories } from "./store/reducers/categoriesSlice";
 import { loadItems } from "./store/reducers/itemsSlice";
@@ -27,8 +26,6 @@ import ProfilePage from "./components/ProfilePage";
 import AboutDev from "./components/AboutDev";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-
   const dispatch = useDispatch();
   const baseUrl = process.env.REACT_APP_BASE_SERVER_URL;
 
@@ -50,23 +47,12 @@ function App() {
       } catch (error: any) {
         console.log(error.message);
       }
-      setIsLoading(false);
     }
     getData();
   }, [dispatch, baseUrl]);
 
   return (
     <div className="App">
-      {/* {isLoading ? (
-        <div className="loading_wrapper">
-          <PulseLoader
-            speedMultiplier={0.5}
-            color="#BDB8B8"
-            loading={isLoading}
-            margin={10}
-          />
-        </div>
-      ) : ( */}
       <div className="main">
         <Router>
           <ScrollToTop />
@@ -86,7 +72,6 @@ function App() {
         </Router>
         <Footer />
       </div>
-      {/* )} */}
     </div>
   );
 }
